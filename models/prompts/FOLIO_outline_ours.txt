@@ -1,0 +1,6 @@
+Write a step-by-step deduction to solve the following question:
+[[PREMISES]]
+[[HINTS]]
+[[QUESTION]]
+
+[[FEEDBACK]]

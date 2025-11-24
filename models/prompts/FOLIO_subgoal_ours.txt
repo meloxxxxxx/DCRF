@@ -1,0 +1,19 @@
+Solve the following First-Order Logic inference question:
+[[PREMISES]]
+[[HINTS]]
+[[QUESTION]]
+###
+[[DEDUCTION]]
+###
+Please follow these guidelines:
+- Summarize the deduction above by extracting the subconclution and its proofs in each step.
+- The line of the i-th subconclusion should start with "[SUBCONCLUSION i]" EXACTLY, and do NOT use line feed in one subconclusion.
+- In the next line of each subconclusion, list its proofs using indices, like "premise i, premise j,..., subconclusion k, subconclusion l". This line should start with "[PROOFS]" EXACTLY, and do NOT use line feed.
+- Each subconclusion is a CLEAN conclusion without its proof, analysis, and other problems.
+- Denote the answer of true, false or uncertain with a line starting with "[ANSWER]", and also don't forget to list its proofs in the next line strating with [PROOFS]. 
+
+- Do NOT write subconclusions identical to any of the given premises and the question.
+- Do NOT write subconclusions that are more complex than the original problems or contain other problems. The subconclusions should be SIMPLER than the given problem.
+- Do NOT include proof, analysis, and other problems in each subconclusions.
+
+[[FEEDBACK]]

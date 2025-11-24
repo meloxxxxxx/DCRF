@@ -1,0 +1,6 @@
+###
+[TRIAL [[TRIALID]]]
+In this former trial, you made the following subconclusions to reach the answer. Through rigid verification, we denote your correct(i.e. true) and incorrect (i.e. false or uncertain) subconclusions.
+[Your trial]:
+[[DEDUCTION]]
+[[SUBCONCLUSIONRESULTS]]

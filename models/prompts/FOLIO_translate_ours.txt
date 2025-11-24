@@ -1,0 +1,56 @@
+Given the premises and a question, the task is to parse the premises and the question into a complete Prover9 input file.
+The format of the Prover9 input file is as follows:
+1) All premises must be placed between 'formulas(assumptions).' and 'end_of_list.'.
+2) The conclusion to be proved must be placed between 'formulas(goals).' and 'end_of_list.'.
+3) All formulas must end with a period (.).
+4) Use '-' for negation, '&' for conjunction, and '|' for disjunction.
+5) Use 'all x (...)' for universal quantification and 'exists x (...)' for existential quantification.
+------
+Premises:
+All people who regularly drink coffee are dependent on caffeine.
+People either regularly drink coffee or joke about being addicted to caffeine.
+No one who jokes about being addicted to caffeine is unaware that caffeine is a drug.
+Rina is either a student and unaware that caffeine is a drug, or neither a student nor unaware that caffeine is a drug.
+If Rina is not a person dependent on caffeine and a student, then Rina is either a person dependent on caffeine and a student, or neither a person dependent on caffeine nor a student.
+Question:
+Based on the above information, is the following statement true, false, or uncertain? Rina is either a person who jokes about being addicted to caffeine or is unaware that caffeine is a drug.
+###
+formulas(assumptions).
+all x (Drinks(x) -> Dependent(x)).
+all x (Drinks(x) | Jokes(x)).
+all x (Jokes(x) -> -Unaware(x)).
+(Student(rina) & Unaware(rina)) | (-Student(rina) & -Unaware(rina)).
+-(Dependent(rina) & Student(rina)) -> ((Dependent(rina) & Student(rina)) | (-Dependent(rina) & -Student(rina))).
+end_of_list.
+
+formulas(goals).
+Jokes(rina) | Unaware(rina).
+((Jokes(rina) & Unaware(rina)) | (-Jokes(rina) & -Unaware(rina))) -> (Jokes(rina) & Drinks(rina)).
+end_of_list.
+------
+Premises:
+Miroslav Venhoda was a Czech choral conductor who specialized in the performance of Renaissance and Baroque music.
+Any choral conductor is a musician.
+Some musicians love music.
+Miroslav Venhoda published a book in 1946 called Method of Studying Gregorian Chant.
+Question:
+Based on the above information, is the following statement true, false, or uncertain? Miroslav Venhoda loved music.
+###
+formulas(assumptions).
+Czech(miroslav) & ChoralConductor(miroslav) & Specialize(miroslav, renaissance) & Specialize(miroslav, baroque).
+all x (ChoralConductor(x) -> Musician(x)).
+exists x (Musician(x) & Love(x, music)).
+Book(methodOfStudyingGregorianChant) & Author(miroslav, methodOfStudyingGregorianChant) & Publish(methodOfStudyingGregorianChant, year1946).
+end_of_list.
+
+formulas(goals).
+Love(miroslav, music).
+exists y (exists x (Czech(x) & Author(x, y) & Book(y) & Publish(y, year1946))).
+-exists x (ChoralConductor(x) & Specialize(x, renaissance)).
+end_of_list.
+------
+Premises:
+[[PROBLEM]]
+Question:
+[[QUESTION]]
+###

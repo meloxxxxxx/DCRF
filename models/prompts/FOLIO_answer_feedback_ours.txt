@@ -1,0 +1,5 @@
+###
+[TRIAL [[TRIALID]]]
+In this former trial, you gave the following summary, [[FAILURE]]. Please try again.
+Your summary:
+[[SUMMARY]]
